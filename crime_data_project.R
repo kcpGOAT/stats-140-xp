@@ -61,7 +61,7 @@ crime_status <- crime_df %>%
   summarize(prop_resolved = sum(status != "IC") / sum(!is.na(status))) %>%
   arrange(-prop_resolved)
 
-### Result: Crimes involving intimate partners and violations of restraining orders or court orders
+### Result: Crime investigations involving intimate partners and violations of restraining orders or court orders
 ###         are the most likely to be resolved. Crimes involving theft and burglary are the least likely 
 ###         to be resolved. 
 
