@@ -15,11 +15,17 @@ crime_df <- crime_data_LA %>%
                             month %in% c("09", "10", "11") ~ "fall")) %>%
   select(month, season, period_day, type_crime, status)
 
-## ANALYSIS ZERO (?)
+## EDA
 
-period_count <- crime_df %>%
-  group_by(period_day) %>%
-  count()
+summary(crime_df)
+
+table(crime_df$month) |> barplot()
+
+table(crime_df$season)[c(2, 3, 1, 4)] |> barplot()
+
+table(crime_df$period_day) |> barplot()
+
+table(crime_df$status) |> barplot()
 
 ### Result: There are more crimes in the evening than in the morning and afternoon combined.
 
