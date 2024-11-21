@@ -27,6 +27,12 @@ table(crime_df$period_day) |> barplot()
 
 table(crime_df$status) |> barplot()
 
+## ANALYSIS ZERO (?)
+
+period_count <- crime_df %>%
+  group_by(period_day) %>%
+  count()
+
 ### Result: There are more crimes in the evening than in the morning and afternoon combined.
 
 ## ANALYSIS ONE
