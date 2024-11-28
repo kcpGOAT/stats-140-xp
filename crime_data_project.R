@@ -70,7 +70,7 @@ crime_period_results <- crime_period %>%
 crime_status <- crime_df %>%
   group_by(type_crime) %>%
   filter(n() > 5000) %>%
-  summarize(prop_resolved = sum(status != "IC") / sum(!is.na(status))) %>%
+  summarize(prop_resolved = sum(status != "IC", na.rm = TRUE) / sum(!is.na(status))) %>%
   arrange(-prop_resolved)
 
 ### Result: Crime investigations involving intimate partners and violations of restraining orders or court orders
